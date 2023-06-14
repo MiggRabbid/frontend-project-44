@@ -5,5 +5,11 @@ const userName = () => {
     return name;
 }
 
-export { userName };
+const userAnswerForEven = () => {
+    const answer = readlineSync.question('Your answer: ');
+    return answer;
+}
 
+
+
+export { userName, userAnswerForEven };
