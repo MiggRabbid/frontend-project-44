@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/MiggRabbid/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/MiggRabbid/frontend-project-44/actions)
-=======
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/MiggRabbid/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/MiggRabbid/frontend-project-44/actions)
 
@@ -11,4 +7,3 @@
 
 ### Brain-Even on asciinema.org
 [![asciicast](https://asciinema.org/a/591424.svg)](https://asciinema.org/a/591424)
->>>>>>> 2ed5a900944a48db7714e1fb26bf98ee37b05433
