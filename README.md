@@ -4,3 +4,6 @@
 
 ### Maintainability status from Codeclimate.com:
 [![Maintainability](https://api.codeclimate.com/v1/badges/0b5a95a1aade441825f3/maintainability)](https://codeclimate.com/github/MiggRabbid/frontend-project-44/maintainability)
+
+### Brain-Even on asciinema.org
+[![asciicast](https://asciinema.org/a/591424.svg)](https://asciinema.org/a/591424)
