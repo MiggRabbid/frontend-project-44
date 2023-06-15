@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { userName, userResponse} from "../src/cli.js";
 import { randomNumber } from "../src/computing.js";
 
@@ -12,20 +13,22 @@ const getRandomIndex = (min=0.01, max=0.04) => {
   }
 
 const getAnswer = () => {
-    const firstNumber = randomNumber();
-    const SecondNumber = randomNumber();
     const operators = ["+", "-", "*"];
     let i = 0;
 
     while (i < 3) {
-        console.log(`Question: ${firstNumber} ${operators[getRandomIndex() - 1]} ${SecondNumber}`);
+        const firstNumber = randomNumber();
+        const SecondNumber = randomNumber();
+        let randonIndex = getRandomIndex() - 1;
         let sum = 0;
 
-        if (getRandomIndex() === 1) {
+        console.log(`Question: ${firstNumber} ${operators[randonIndex]} ${SecondNumber}`);
+
+        if (randonIndex === 0) {
             sum = firstNumber + SecondNumber;
-        } else if (getRandomIndex() === 2) {
+        } else if (randonIndex === 1) {
             sum = firstNumber - SecondNumber;
-        } else if (getRandomIndex() === 3) {
+        } else if (randonIndex === 2) {
             sum = firstNumber * SecondNumber;
         }
 
