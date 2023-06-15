@@ -1,15 +1,15 @@
 #!/usr/bin/env node
-import { userName, userAnswerForEven } from "../src/cli.js";
+import { userName, userResponse } from "../src/cli.js";
+import { randomNumber } from "../src/computing.js";
+
 
 console.log("Welcome to the Brain Games!");
-
 const user = userName();
 console.log(`Hello, ${user}!`);
-
 console.log(`Answer "yes" if the number is even, otherwise answer "no".`);
 
 const isEvenNumber = () => {
-    const number = Math.floor(Math.random() * 100);
+    const number = randomNumber();
     console.log(`Question: ${number}`);
     if (number % 2 === 0) {
         return "yes";
@@ -22,7 +22,7 @@ const getAnswer = () => {
     let i = 0;
     while (i < 3) {
         let expected = isEvenNumber();
-        let response = userAnswerForEven();
+        let response = userResponse();
         if (expected === response) {
             console.log('Correct!');
             i += 1
