@@ -5,7 +5,7 @@ const user = getUser();
 console.log(`Answer "yes" if the number is even, otherwise answer "no".`);
 
 const isEvenNumber = () => {
-    const number = getRandomNumber();
+    const number = getRandomNumber(0.001, 1);
     console.log(`Question: ${number}`);
     if (number % 2 === 0) {
         return "yes";
@@ -22,7 +22,7 @@ const getAnswer = () => {
         if (isCorrectAnswer(user, expected) === true ) {
             i += 1;
         } else {
-            return console.log(`Let's try again, ${user}!`);
+            return `Let's try again, ${user}!`;
         }
     }
     return `Congratulations, ${user}!`;

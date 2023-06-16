@@ -19,7 +19,7 @@ const isCorrectAnswer = (user, expected) => {
         console.log('Correct!');
         return true
     } else {
-        console.log(`${response} is wrong answer ;(. Correct answer was ${expected}.`);
+        console.log(`"${response}" is wrong answer ;(. Correct answer was "${expected}".`);
         return false
     }
 }
