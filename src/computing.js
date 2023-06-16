@@ -12,7 +12,7 @@ const getRandomNumber = (min, max) => {
     return Math.floor((Math.random() * (max - min) + min) * 100);
 }
 
-const isCorrectAnswer = (user, expected) => {
+const isCorrectAnswer = (expected) => {
     let response = userResponse();
 
     if (expected == response) {

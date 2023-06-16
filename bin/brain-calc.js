@@ -12,6 +12,7 @@ const getAnswer = () => {
         const firstNumber = getRandomNumber(0.001, 1);
         const SecondNumber = getRandomNumber(0.001, 1);
         const randonIndex = getRandomNumber(0.01, 0.04) - 1;
+        
         console.log(`Question: ${firstNumber} ${operators[randonIndex]} ${SecondNumber}`);
 
         let expected = 0;
@@ -24,7 +25,7 @@ const getAnswer = () => {
             expected = firstNumber * SecondNumber;
         }
 
-        if (isCorrectAnswer(user, expected) === true ) {
+        if (isCorrectAnswer(expected) === true ) {
             i += 1;
         } else {
             return `Let's try again, ${user}!`;

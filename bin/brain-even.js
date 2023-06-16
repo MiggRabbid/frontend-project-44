@@ -19,7 +19,7 @@ const getAnswer = () => {
     while (i < 3) {
         let expected = isEvenNumber();
         
-        if (isCorrectAnswer(user, expected) === true ) {
+        if (isCorrectAnswer(expected) === true ) {
             i += 1;
         } else {
             return `Let's try again, ${user}!`;
