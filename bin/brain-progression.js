@@ -10,8 +10,6 @@ const getProgression = () => {
     const step = getRandomNumber(0.01, 0.03);
     const index = getRandomNumber(0.01, 0.11);
 
-    console.log(`step: ${step}`)
-
     let currentNumber = firstNumber;
     let question = ""
     let expected = 0;
