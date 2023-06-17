@@ -5,7 +5,7 @@ const user = getUser();
 console.log('What is the result of the expression?');
 
 const getAnswer = () => {
-  const operators = ['я+', '-', '*'];
+  const operators = ['+', '-', '*'];
   let i = 0;
 
   while (i < 3) {
