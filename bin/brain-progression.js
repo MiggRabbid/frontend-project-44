@@ -20,12 +20,12 @@ const getProgression = () => {
         if ( i !== index) {
             question = question + " " + String(currentNumber);
         } else if (i === index){
-            question = question + " ..";
+            question = question + ".. ";
             expected = currentNumber;
         }
     }
 
-    console.log(`Question: ${question}`)
+    console.log(`Question: ${question.trim()}`)
 	return expected;
 }
 
