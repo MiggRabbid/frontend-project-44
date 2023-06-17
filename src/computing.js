@@ -12,7 +12,7 @@ const getRandomNumber = (min, max) => Math.floor((Math.random() * (max - min) + 
 const isCorrectAnswer = (expected) => {
   const response = userResponse();
 
-  if (expected == response) {
+  if (expected === response) {
     console.log('Correct!');
     return true;
   }

@@ -8,7 +8,7 @@ const getGcd = (firstNumber, SecondNumber) => {
   let a = firstNumber;
   let b = SecondNumber;
 
-  while (a !== SecondNumber) {
+  while (a !== b) {
     if (a > b) {
       a -= b;
     } else {
@@ -29,7 +29,7 @@ const getAnswer = () => {
 
     const expected = getGcd(firstNumber, SecondNumber);
 
-    if (isCorrectAnswer(expected) === true) {
+    if (isCorrectAnswer(String(expected)) === true) {
       i += 1;
     } else {
       return `Let's try again, ${user}!`;

@@ -34,7 +34,7 @@ const getAnswer = () => {
   while (i < 3) {
     const expected = getProgression();
 
-    if (isCorrectAnswer(expected) === true) {
+    if (isCorrectAnswer(String(expected)) === true) {
       i += 1;
     } else {
       return `Let's try again, ${user}!`;

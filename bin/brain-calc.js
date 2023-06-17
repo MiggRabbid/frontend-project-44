@@ -25,7 +25,7 @@ const getAnswer = () => {
       expected = firstNumber * SecondNumber;
     }
 
-    if (isCorrectAnswer(expected) === true) {
+    if (isCorrectAnswer(String(expected)) === true) {
       i += 1;
     } else {
       return `Let's try again, ${user}!`;
