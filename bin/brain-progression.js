@@ -7,7 +7,7 @@ console.log(`What number is missing in the progression?`);
 
 const getProgression = () => {
     const firstNumber = getRandomNumber(0.001, 1);
-    const step = getRandomNumber(0.01, 0.03);
+    const step = getRandomNumber(0.01, 0.011);
     const index = getRandomNumber(0.01, 0.11);
 
     let currentNumber = firstNumber;
