@@ -1,12 +1,14 @@
 import { getGreeting, isCorrectAnswer } from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const user = getGreeting();
-console.log('Find the greatest common divisor of given numbers.');
+const gameNames = 'brain-gcd';
+const user = getGreeting(gameNames);
 
-const getGcd = (firstNumber, SecondNumber) => {
-  let a = firstNumber;
-  let b = SecondNumber;
+const getGcd = () => {
+  let a = getRandomNumber(1, 100);
+  let b = getRandomNumber(1, 100);
+  const question = `${a} ${b}`;
+  const gameData = [user];
 
   while (a !== b) {
     if (a > b) {
@@ -16,27 +18,18 @@ const getGcd = (firstNumber, SecondNumber) => {
     }
   }
 
-  return a;
+  gameData.push(String(a));
+  gameData.push(question);
+
+  return gameData;
 };
 
 const getAnswer = () => {
-  let i = 0;
-
-  while (i < 3) {
-    const firstNumber = getRandomNumber(1, 100);
-    const SecondNumber = getRandomNumber(1, 100);
-    console.log(`Question: ${firstNumber} ${SecondNumber}`);
-
-    const expected = getGcd(firstNumber, SecondNumber);
-
-    if (isCorrectAnswer(String(expected)) === true) {
-      i += 1;
-    } else {
-      return console.log(`Let's try again, ${user}!`);
+  for (let i = 1; i <= 4; i += 1) {
+    if (isCorrectAnswer(i, getGcd()) === false) {
+      break;
     }
   }
-
-  return console.log(`Congratulations, ${user}!`);
 };
 
 export default getAnswer;

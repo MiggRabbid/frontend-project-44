@@ -1,38 +1,37 @@
+// eslint-disable-next-line import/no-cycle
 import { getGreeting, isCorrectAnswer } from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const user = getGreeting();
-console.log('What is the result of the expression?');
+const gameNames = 'brain-calc';
+const user = getGreeting(gameNames);
 
-const getAnswer = () => {
-  const operators = ['+', '-', '*'];
-  let i = 0;
+const getCalc = () => {
+  const firstNumber = getRandomNumber(1, 100);
+  const SecondNumber = getRandomNumber(1, 100);
+  const randonIndex = getRandomNumber(0, 2);
 
-  while (i < 3) {
-    const firstNumber = getRandomNumber(1, 100);
-    const SecondNumber = getRandomNumber(1, 100);
-    const randonIndex = getRandomNumber(0, 2);
+  const gameData = [user];
 
-    console.log(`Question: ${firstNumber} ${operators[randonIndex]} ${SecondNumber}`);
-
-    let expected = 0;
-
-    if (randonIndex === 0) {
-      expected = firstNumber + SecondNumber;
-    } else if (randonIndex === 1) {
-      expected = firstNumber - SecondNumber;
-    } else {
-      expected = firstNumber * SecondNumber;
-    }
-
-    if (isCorrectAnswer(String(expected)) === true) {
-      i += 1;
-    } else {
-      return console.log(`Let's try again, ${user}!`);
-    }
+  if (randonIndex === 0) {
+    gameData.push(String(firstNumber + SecondNumber));
+    gameData.push(`${firstNumber} + ${SecondNumber}`);
+  } else if (randonIndex === 1) {
+    gameData.push(String(firstNumber - SecondNumber));
+    gameData.push(`${firstNumber} - ${SecondNumber}`);
+  } else if (randonIndex === 2) {
+    gameData.push(String(firstNumber * SecondNumber));
+    gameData.push(`${firstNumber} * ${SecondNumber}`);
   }
 
-  return console.log(`Congratulations, ${user}!`);
+  return gameData;
+};
+
+const getAnswer = () => {
+  for (let i = 1; i <= 4; i += 1) {
+    if (isCorrectAnswer(i, getCalc()) === false) {
+      break;
+    }
+  }
 };
 
 export default getAnswer;

@@ -1,13 +1,13 @@
 import { getGreeting, isCorrectAnswer } from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const user = getGreeting();
-console.log('What number is missing in the progression?');
+const user = getGreeting('brain-progression');
 
 const getProgression = () => {
   const firstNumber = getRandomNumber(1, 100);
   const step = getRandomNumber(1, 20);
   const index = getRandomNumber(1, 10);
+  const gameData = [user];
 
   let currentNumber = firstNumber;
   let question = '';
@@ -23,25 +23,18 @@ const getProgression = () => {
       expected = currentNumber;
     }
   }
+  gameData.push(String(expected));
+  gameData.push(question);
 
-  console.log(`Question: ${question.trim()}`);
-  return expected;
+  return gameData;
 };
 
 const getAnswer = () => {
-  let i = 0;
-
-  while (i < 3) {
-    const expected = getProgression();
-
-    if (isCorrectAnswer(String(expected)) === true) {
-      i += 1;
-    } else {
-      return console.log(`Let's try again, ${user}!`);
+  for (let i = 1; i <= 4; i += 1) {
+    if (isCorrectAnswer(i, getProgression()) === false) {
+      break;
     }
   }
-
-  return console.log(`Congratulations, ${user}!`);
 };
 
 export default getAnswer;

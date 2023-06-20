@@ -1,35 +1,32 @@
 import { getGreeting, isCorrectAnswer } from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const user = getGreeting();
-console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+const gameNames = 'brain-prime';
+const user = getGreeting(gameNames);
 
-const isPrimeNumber = () => {
+const isPrime = () => {
   const number = getRandomNumber(1, 100);
-  console.log(`Question: ${number}`);
+
+  const gameData = [user];
 
   for (let i = 2; i < (number / 2); i += 1) {
     if (number % i === 0) {
-      return 'no';
+      gameData.push('no');
+      gameData.push(number);
     }
   }
-  return 'yes';
+  gameData.push('yes');
+  gameData.push(number);
+
+  return gameData;
 };
 
 const getAnswer = () => {
-  let i = 0;
-
-  while (i < 3) {
-    const expected = isPrimeNumber();
-
-    if (isCorrectAnswer(expected) === true) {
-      i += 1;
-    } else {
-      return console.log(`Let's try again, ${user}!`);
+  for (let i = 1; i <= 4; i += 1) {
+    if (isCorrectAnswer(i, isPrime()) === false) {
+      break;
     }
   }
-
-  return console.log(`Congratulations, ${user}!`);
 };
 
 export default getAnswer;

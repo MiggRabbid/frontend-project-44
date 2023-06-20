@@ -1,33 +1,29 @@
 import { getGreeting, isCorrectAnswer } from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const user = getGreeting();
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const gameNames = 'brain-even';
+const user = getGreeting(gameNames);
 
 const isEvenNumber = () => {
   const number = getRandomNumber(1, 100);
-  console.log(`Question: ${number}`);
+  const gameData = [user];
 
   if (number % 2 === 0) {
-    return 'yes';
+    gameData.push('yes');
+    gameData.push(number);
   }
-  return 'no';
+  gameData.push('no');
+  gameData.push(number);
+
+  return gameData;
 };
 
 const getAnswer = () => {
-  let i = 0;
-
-  while (i < 3) {
-    const expected = isEvenNumber();
-
-    if (isCorrectAnswer(expected) === true) {
-      i += 1;
-    } else {
-      return console.log(`Let's try again, ${user}!`);
+  for (let i = 1; i <= 4; i += 1) {
+    if (isCorrectAnswer(i, isEvenNumber()) === false) {
+      break;
     }
   }
-
-  return console.log(`Congratulations, ${user}!`);
 };
 
 export default getAnswer;
