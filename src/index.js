@@ -7,11 +7,8 @@ const getUser = () => {
   return user;
 };
 
-const getRandomNumber = (min, max) => Math.floor((Math.random() * (max - min) + min) * 100);
-
 const isCorrectAnswer = (expected) => {
   const response = userResponse();
-
   if (expected === response) {
     console.log('Correct!');
     return true;
@@ -20,4 +17,4 @@ const isCorrectAnswer = (expected) => {
   return false;
 };
 
-export { getUser, getRandomNumber, isCorrectAnswer };
+export { getUser, isCorrectAnswer };
