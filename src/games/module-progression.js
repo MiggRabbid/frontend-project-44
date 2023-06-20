@@ -1,7 +1,7 @@
-import { getUser, isCorrectAnswer } from '../index.js';
+import { getGreeting, isCorrectAnswer } from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const user = getUser();
+const user = getGreeting();
 console.log('What number is missing in the progression?');
 
 const getProgression = () => {
@@ -37,11 +37,11 @@ const getAnswer = () => {
     if (isCorrectAnswer(String(expected)) === true) {
       i += 1;
     } else {
-      return `Let's try again, ${user}!`;
+      return console.log(`Let's try again, ${user}!`);
     }
   }
 
-  return `Congratulations, ${user}!`;
+  return console.log(`Congratulations, ${user}!`);
 };
 
 export default getAnswer;

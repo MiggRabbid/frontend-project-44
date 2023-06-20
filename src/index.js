@@ -1,9 +1,10 @@
 import { userName, userResponse } from './cli.js';
 
-const getUser = () => {
+const getGreeting = () => {
   console.log('Welcome to the Brain Games!');
   const user = userName();
   console.log(`Hello, ${user}!`);
+
   return user;
 };
 
@@ -17,4 +18,4 @@ const isCorrectAnswer = (expected) => {
   return false;
 };
 
-export { getUser, isCorrectAnswer };
+export { getGreeting, isCorrectAnswer };
