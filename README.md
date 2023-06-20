@@ -54,17 +54,17 @@ Node.js v20.2.0
 
 ## Демонстрация игрового процесса
 
-### Brain-calc on asciinema.org
+### "Калькулятор" on asciinema.org
 [![asciicast](https://asciinema.org/a/591667.svg)](https://asciinema.org/a/591667)
 
-### Brain-progression on asciinema.org
+### "Арифметическая прогрессия" on asciinema.org
 [![asciicast](https://asciinema.org/a/591955.svg)](https://asciinema.org/a/591955)
 
-### Brain-even on asciinema.org
+### "Проверка на чётность" on asciinema.org
 [![asciicast](https://asciinema.org/a/591424.svg)](https://asciinema.org/a/591424)
 
-### Brain-gcd on asciinema.org
+### "НОД" on asciinema.org
 [![asciicast](https://asciinema.org/a/591949.svg)](https://asciinema.org/a/591949)
 
-### Brain-prime on asciinema.org
+### "Простое ли число?" on asciinema.org
 [![asciicast](https://asciinema.org/a/591958.svg)](https://asciinema.org/a/591958)
