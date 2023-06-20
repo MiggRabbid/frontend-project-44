@@ -4,7 +4,7 @@
 ### Maintainability status from Codeclimate.com:
 [![Maintainability](https://api.codeclimate.com/v1/badges/0b5a95a1aade441825f3/maintainability)](https://codeclimate.com/github/MiggRabbid/frontend-project-44/maintainability)
 
-**«Игры разума»**
+## «Игры разума»
 — набор из пяти консольных игр, построенных по принципу популярных мобильных приложений для прокачки мозга. Каждая игра задает вопросы, на которые нужно дать правильные ответы. После трех правильных ответов считается, что игра пройдена. Неправильные ответы завершают игру и предлагают пройти ее заново. 
 
 **Игры:**
