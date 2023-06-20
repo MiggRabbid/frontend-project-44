@@ -49,6 +49,10 @@ npm link
 * `brain-gcd` - "НОД".
 * `brain-prime` - "Простое ли число?".
 
+#### Системные требования
+Node.js v20.2.0
+
+## Демонстрация игрового процесса
 
 ### Brain-calc on asciinema.org
 [![asciicast](https://asciinema.org/a/591667.svg)](https://asciinema.org/a/591667)
