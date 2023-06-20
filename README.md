@@ -14,6 +14,7 @@
 1. Определение наибольшего общего делителя.
 1. Определение простого числа.
 
+
 **Пример игры:**
 
 ```brain-progression
@@ -33,6 +34,7 @@ Correct!
 Congratulations, Roman!
 ```
 
+
 **Для запуска игры используйте следующие команды:**
 * `brain-calc` - Калькулятор. 
 * `brain-progression` - Прогрессия.
@@ -40,17 +42,18 @@ Congratulations, Roman!
 * `brain-gcd` - Определение наибольшего общего делителя.
 * `brain-prime` - Определение простого числа.
 
-### Brain-Even on asciinema.org
-[![asciicast](https://asciinema.org/a/591424.svg)](https://asciinema.org/a/591424)
 
 ### Brain-Calc on asciinema.org
 [![asciicast](https://asciinema.org/a/591667.svg)](https://asciinema.org/a/591667)
 
-### Brain-Gcd on asciinema.org
-[![asciicast](https://asciinema.org/a/591949.svg)](https://asciinema.org/a/591949)
-
 ### brain-progression on asciinema.org
 [![asciicast](https://asciinema.org/a/591955.svg)](https://asciinema.org/a/591955)
+
+### Brain-Even on asciinema.org
+[![asciicast](https://asciinema.org/a/591424.svg)](https://asciinema.org/a/591424)
+
+### Brain-Gcd on asciinema.org
+[![asciicast](https://asciinema.org/a/591949.svg)](https://asciinema.org/a/591949)
 
 ### brain-prime on asciinema.org
 [![asciicast](https://asciinema.org/a/591958.svg)](https://asciinema.org/a/591958)
