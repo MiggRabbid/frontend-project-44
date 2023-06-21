@@ -6,6 +6,7 @@ const gameNames = 'brain-calc';
 const user = getGreeting(gameNames);
 
 const getCalc = () => {
+  const perators = ['+', '-', '*'];
   const firstNumber = getRandomNumber(1, 100);
   const SecondNumber = getRandomNumber(1, 100);
   const randonIndex = getRandomNumber(0, 2);
@@ -14,15 +15,13 @@ const getCalc = () => {
 
   if (randonIndex === 0) {
     gameData.push(String(firstNumber + SecondNumber));
-    gameData.push(`${firstNumber} + ${SecondNumber}`);
   } else if (randonIndex === 1) {
     gameData.push(String(firstNumber - SecondNumber));
-    gameData.push(`${firstNumber} - ${SecondNumber}`);
   } else if (randonIndex === 2) {
     gameData.push(String(firstNumber * SecondNumber));
-    gameData.push(`${firstNumber} * ${SecondNumber}`);
   }
 
+  gameData.push(`${firstNumber} ${perators[randonIndex]} ${SecondNumber}`);
   return gameData;
 };
 
