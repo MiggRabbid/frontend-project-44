@@ -1,7 +1,7 @@
 import gameStart from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const ruls = 'Answer "yes" if the number is even, otherwise answer "no".';
+const ruls = 'What number is missing in the progression?';
 const rounds = 3;
 
 const getCorrectAnswer = () => {

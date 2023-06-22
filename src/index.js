@@ -12,14 +12,6 @@ const getGreeting = () => {
   return user;
 };
 
-// } else if (game === 'brain-gcd') {
-//   console.log('Find the greatest common divisor of given numbers.');
-// } else if (game === 'brain-prime') {
-//   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-// } else if (game === 'brain-progression') {
-//   console.log('What number is missing in the progression?');
-// }
-
 const user = getGreeting();
 
 const userResponse = () => {
