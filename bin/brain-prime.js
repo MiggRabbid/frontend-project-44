@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import getAnswer from '../src/games/module-prime.js';
+import runBrainPrime from '../src/games/prime-number.js';
 
-getAnswer();
+runBrainPrime();

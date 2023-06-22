@@ -5,9 +5,4 @@ const userName = () => {
   return name;
 };
 
-const userResponse = () => {
-  const answer = readlineSync.question('Your answer: ');
-  return answer;
-};
-
-export { userName, userResponse };
+console.log(userName());

@@ -1,21 +1,19 @@
-import { getGreeting, isCorrectAnswer } from '../index.js';
+import gameStart from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const user = getGreeting('brain-progression');
+const ruls = 'Answer "yes" if the number is even, otherwise answer "no".';
+const rounds = 3;
 
-const getProgression = () => {
+const getCorrectAnswer = () => {
   const firstNumber = getRandomNumber(1, 100);
   const step = getRandomNumber(1, 20);
   const index = getRandomNumber(1, 10);
-  const gameData = [user];
-
+  const gameData = [];
   let currentNumber = firstNumber;
   let question = '';
   let expected = 0;
-
   for (let i = 1; i <= 10; i += 1) {
     currentNumber += step;
-
     if (i !== index) {
       question = `${question + String(currentNumber)} `;
     } else if (i === index) {
@@ -25,16 +23,15 @@ const getProgression = () => {
   }
   gameData.push(String(expected));
   gameData.push(question);
-
   return gameData;
 };
 
-const getAnswer = () => {
-  for (let i = 1; i <= 4; i += 1) {
-    if (isCorrectAnswer(i, getProgression()) === false) {
+export default () => {
+  for (let roundNumber = 1; roundNumber <= rounds; roundNumber += 1) {
+    const gameData = getCorrectAnswer();
+    const roundResult = gameStart(ruls, rounds, roundNumber, gameData);
+    if (roundResult === false) {
       break;
     }
   }
 };
-
-export default getAnswer;
