@@ -23,13 +23,10 @@ const currentRoundData = () => {
   const firstNumber = getRandomNumber(1, 100);
   const secondNumber = getRandomNumber(1, 100);
 
-  const correctAnswer = getCalculate(randonIndex, firstNumber, secondNumber);
+  const correctAnswer = String(getCalculate(randonIndex, firstNumber, secondNumber));
+  const question = `${firstNumber} ${operators[randonIndex]} ${secondNumber}`;
 
-  const gameData = [];
-  gameData.push(String(correctAnswer));
-  gameData.push(`${firstNumber} ${operators[randonIndex]} ${secondNumber}`);
-
-  return gameData;
+  return [correctAnswer, question];
 };
 
 export default () => gameStart(ruls, currentRoundData);

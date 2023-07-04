@@ -21,12 +21,9 @@ const currentRoundData = () => {
 
   const progression = getProgression(firstNumber, step);
   const correctAnswer = String(firstNumber + (index - 1) * step);
+  const question = progression.replace(correctAnswer, '..');
 
-  const gameData = [];
-  gameData.push(correctAnswer);
-  gameData.push(progression.replace(correctAnswer, '..'));
-
-  return gameData;
+  return [correctAnswer, question];
 };
 
 export default () => gameStart(ruls, currentRoundData);

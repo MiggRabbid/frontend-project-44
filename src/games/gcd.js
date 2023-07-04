@@ -12,13 +12,10 @@ const currentRoundData = () => {
   const firstNumber = getRandomNumber(1, 100);
   const secondNumber = getRandomNumber(1, 100);
 
-  const correctAnswer = getGcd(firstNumber, secondNumber);
+  const correctAnswer = String(getGcd(firstNumber, secondNumber));
+  const question = `${firstNumber} ${secondNumber}`;
 
-  const gameData = [];
-  gameData.push(String(correctAnswer));
-  gameData.push(`${firstNumber} ${secondNumber}`);
-
-  return gameData;
+  return [correctAnswer, question];
 };
 
 export default () => gameStart(ruls, currentRoundData);

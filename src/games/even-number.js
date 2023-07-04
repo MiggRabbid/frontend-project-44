@@ -14,12 +14,9 @@ const currentRoundData = () => {
   const number = getRandomNumber(1, 100);
 
   const correctAnswer = isEven(number) ? 'yes' : 'no';
+  const question = String(number);
 
-  const gameData = [];
-  gameData.push(correctAnswer);
-  gameData.push(String(number));
-
-  return gameData;
+  return [correctAnswer, question];
 };
 
 export default () => gameStart(ruls, currentRoundData);
