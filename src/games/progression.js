@@ -2,36 +2,31 @@ import gameStart from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const ruls = 'What number is missing in the progression?';
-const rounds = 3;
+const progressionLength = 10;
 
-const getCorrectAnswer = () => {
+const getProgression = (firstNumber, step) => {
+  let currentNumber = firstNumber;
+  let progression = '';
+  for (let i = 0; i < progressionLength; i += 1) {
+    progression = `${progression + String(currentNumber)} `;
+    currentNumber += step;
+  }
+  return progression;
+};
+
+const currentRoundData = () => {
   const firstNumber = getRandomNumber(1, 100);
   const step = getRandomNumber(1, 20);
-  const index = getRandomNumber(1, 10);
+  const index = getRandomNumber(1, progressionLength);
+
+  const progression = getProgression(firstNumber, step);
+  const correctAnswer = String(firstNumber + (index - 1) * step);
+
   const gameData = [];
-  let currentNumber = firstNumber;
-  let question = '';
-  let expected = 0;
-  for (let i = 1; i <= 10; i += 1) {
-    currentNumber += step;
-    if (i !== index) {
-      question = `${question + String(currentNumber)} `;
-    } else if (i === index) {
-      question = `${question}.. `;
-      expected = currentNumber;
-    }
-  }
-  gameData.push(String(expected));
-  gameData.push(question);
+  gameData.push(correctAnswer);
+  gameData.push(progression.replace(correctAnswer, '..'));
+
   return gameData;
 };
 
-export default () => {
-  for (let roundNumber = 1; roundNumber <= rounds; roundNumber += 1) {
-    const gameData = getCorrectAnswer();
-    const roundResult = gameStart(ruls, rounds, roundNumber, gameData);
-    if (roundResult === false) {
-      break;
-    }
-  }
-};
+export default () => gameStart(ruls, currentRoundData);
