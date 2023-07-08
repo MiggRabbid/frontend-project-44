@@ -1,16 +1,11 @@
-import gameStart from '../index.js';
+import startGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const ruls = 'Answer "yes" if the number is even, otherwise answer "no".';
+const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const isEven = (number) => {
-  if (number % 2 === 0) {
-    return true;
-  }
-  return false;
-};
+const isEven = (number) => number % 2 === 0;
 
-const currentRoundData = () => {
+const getCurrentRoundData = () => {
   const number = getRandomNumber(1, 100);
 
   const correctAnswer = isEven(number) ? 'yes' : 'no';
@@ -19,4 +14,4 @@ const currentRoundData = () => {
   return [correctAnswer, question];
 };
 
-export default () => gameStart(ruls, currentRoundData);
+export default () => startGame(rules, getCurrentRoundData);
